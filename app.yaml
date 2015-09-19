@@ -1,0 +1,14 @@
+application: mapchart
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /js
+  static_dir: js
+
+- url: /api
+  script: api/remove-background.php
+
+- url: /sample
+  static_dir: sample
