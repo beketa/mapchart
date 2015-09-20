@@ -53,12 +53,17 @@ mapchart.jsを読み込むためのコードを追加します。
 <script type="text/javascript" src="http://beketa-1071.appspot.com/js/mapchart.js"></script> 
 ```
 
-マップを初期化する関数の中で、表示したい座標とグラフへのリンクの配列を引数にして、addChartsという関数を呼び出します。
+マップを初期化する関数の中で、座標とグラフへのリンクの配列を引数にして、mapchart.addChartsという関数を呼び出します。配列は、
+
+```
+[ { pos: {lat: 緯度, lng: 経度}, url: リンク }, { pos: {lat: 緯度, lng: 経度}, url: リンク }, ... ]
+```
+
+というような形式になります。
 
 ```
 var charts = [
-  { name: 'Sydney',
-    pos: {lat: -34.397, lng: -150.644},
+  { pos: {lat: -34.397, lng: -150.644},
     url: 'https://docs.google.com/spreadsheets/d/14x3KI7VphUI6-xzkeYFE_f58ZNS4-luV0MhUpbz5hR0/pubchart?oid=1500802721&format=image' }
 ];
 mapchart.addCharts(map, charts);    
@@ -86,8 +91,7 @@ function initMap() {
     zoom: 9
   });
   var charts = [
-    { name: 'Sydney',
-      pos: {lat: -34.397, lng: 150.644},
+    { pos: {lat: -34.397, lng: 150.644},
       url: 'https://docs.google.com/spreadsheets/d/14x3KI7VphUI6-xzkeYFE_f58ZNS4-luV0MhUpbz5hR0/pubchart?oid=1500802721&format=image' }
   ];
   mapchart.addCharts(map, charts);
@@ -105,8 +109,7 @@ function initMap() {
 
 ```
 var charts = [
-  { name: 'Sydney',
-    pos: {lat: -34.397, lng: -150.644},
+  { pos: {lat: -34.397, lng: -150.644},
     url: mapchart.removeBackground('https://docs.google.com/spreadsheets/d/14x3KI7VphUI6-xzkeYFE_f58ZNS4-luV0MhUpbz5hR0/pubchart?oid=1500802721&format=image') }
 ];
 ```
