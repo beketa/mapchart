@@ -1,0 +1,10 @@
+{
+  "spaceUnits": 2,
+  "tabSize": 2,
+  "language": {
+    "javascript": {
+      "linting.prefer": ["JSHint", "JSCS"],
+      "linting.usePreferredOnly": true
+    }
+  }
+}

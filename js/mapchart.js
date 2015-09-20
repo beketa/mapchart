@@ -1,3 +1,5 @@
+/*global google, Image */
+
 this.mapchart = this.mapchart || {};
 
 (function (mapchart) {
@@ -43,10 +45,10 @@ this.mapchart = this.mapchart || {};
         markers[i].setIcon(getChartIcon(charts[i], scale));
       }
     });
-  }
+  };
   
   mapchart.removeBackground = function (url) {
     return 'http://beketa-1071.appspot.com/api?url=' + encodeURIComponent(url);
-  }
+  };
 
 })(this.mapchart);
