@@ -46,7 +46,7 @@ this.mapchart = this.mapchart || {};
       }
     });
   };
-  
+
   mapchart.removeBackground = function (url) {
     return 'http://beketa-1071.appspot.com/api?url=' + encodeURIComponent(url);
   };
